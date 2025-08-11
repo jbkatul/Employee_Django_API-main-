@@ -9,4 +9,5 @@ urlpatterns = [
     path('getById', views.get_by_id),
     path('update', views.update),
     path('delete', views.delete),
+    path('nehasView', views.get_employee_by_name)
 ]

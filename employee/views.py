@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
+from django.db.models.functions import Substr, Upper, Concat
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Employee
-from .serializers import EmployeeSerializer
+from .serializers import *
 
 @api_view(['POST'])
 def login(request):
@@ -75,3 +78,15 @@ def delete(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+@api_view(['GET'])
+def get_employee_by_name(request):
+    name = request.query_params.get('name')
+    if not name:
+        return Response({"error": "Missing 'name' query parameter."}, status=status.HTTP_400_BAD_REQUEST)
+
+    employees = Employee.objects.filter(name__icontains=name)
+    if not employees.exists():
+        return Response({"error": "No employee found with that name."}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = EmployeeSerializer(employees, many=True)
+    return Response(serializer.data)

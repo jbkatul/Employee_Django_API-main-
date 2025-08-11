@@ -1,0 +1,149 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging
+*.egg
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.pytest_cache/
+pytestdebug.log
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+# If you collect static into a folder called 'static' in project root:
+# /static/
+
+# Django migrations (optional — usually you *do* commit migrations)
+# You may want to keep migrations in repo. Uncomment to ignore:
+# */migrations/*.py
+# */migrations/*.pyc
+# */migrations/__pycache__/
+
+# Sensitive / env files
+.env
+.env.*.local
+env_vars/
+secrets.json
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JetBrains
+*.iml
+*.iws
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Editor temp files
+*~
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# mypy
+.mypy_cache/
+
+# Pyre
+.pyre/
+
+# Caches
+.cache/
+.cache/*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Coverage, profiling
+coverage/
+*.prof
+
+# celery
+celerybeat-schedule
+celerybeat.pid
+
+# Docker
+docker-compose.override.yml
+.env.prod
+node_modules/
+
+# Node / frontend (if present)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
