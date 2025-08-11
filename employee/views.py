@@ -75,3 +75,10 @@ def delete(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+@api_view(['GET'])
+def count_all_employees(request):
+    try:
+        total = Employee.objects.count()
+        return Response({"total_employees": total})
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
