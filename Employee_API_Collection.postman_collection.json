@@ -181,6 +181,46 @@
           ]
         }
       }
+    },
+    {
+      "name": "Search Employees by Name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/searchByName?name=Rahul",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "searchByName"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Rahul"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Employee Statistics",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/getStatistics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "getStatistics"
+          ]
+        }
+      }
     }
   ]
 }
