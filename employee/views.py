@@ -65,6 +65,19 @@ def update(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+@api_view(['PATCH'])
+def updatePartialdata(request):
+    try:
+        emp_id = request.data.get('id')
+        employee = Employee.objects.get(id=emp_id)
+        serializer = EmployeeSerializer(employee, data=request.data,partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"success" : True})
+        return Response(serializer.errors, status=400)
+    except Employee.DoesNotExist:
+        return Response({"error" : "Employee not found"}, status = 404)
+
 @api_view(['DELETE'])
 def delete(request):
     emp_id = request.GET.get('id')
@@ -75,3 +88,15 @@ def delete(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+@api_view(['GET'])
+def getbyfirstletter(request):
+    letter = request.GET.get('letter')
+    try:
+        employee = Employee.objects.filter(name__startswith=letter)
+        if employee:
+            serializer = EmployeeSerializer(employee, many = True)
+            return Response(serializer.data)
+        else:
+            return Response({"error" : "not found"}, status =404)
+    except Exception as e:
+        return Response({"error" : str(e)}, status = 404)

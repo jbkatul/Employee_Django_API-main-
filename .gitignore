@@ -1,0 +1,62 @@
+# =========================
+# Python & Django Defaults
+# =========================
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# SQLite database
+db.sqlite3
+
+# Static & media (optional: if generated/uploaded dynamically)
+staticfiles/
+media/
+
+# =========================
+# API Testing / Temp Files
+# =========================
+# Postman collections or temp data files
+*.postman_collection.json
+*.postman_environment.json
+*.tmp
+*.temp
+*.bak
+
+# Ignore dump files except the main testing JSON
+*.json
+!employees.json  # Allow only the main test file
+
+# =========================
+# Environment & Config Files
+# =========================
+.env
+.env.*
+
+# =========================
+# IDE / Editor Settings
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage / test reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
