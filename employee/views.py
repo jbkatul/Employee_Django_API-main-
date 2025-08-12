@@ -75,3 +75,12 @@ def delete(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+@api_view(['GET'])
+def get_by_name(request):
+    name = request.GET.get('name')
+    if not name:
+        return Response({"error": "Name parameter is required"}, status=400)
+
+    employees = Employee.objects.filter(name__icontains=name)
+    serializer = EmployeeSerializer(employees, many=True)
+    return Response(serializer.data)
