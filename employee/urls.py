@@ -9,4 +9,5 @@ urlpatterns = [
     path('getById', views.get_by_id),
     path('update', views.update),
     path('delete', views.delete),
+    path('getByName/', views.get_by_name),
 ]
