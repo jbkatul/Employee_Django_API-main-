@@ -75,3 +75,14 @@ def delete(request):
     except Employee.DoesNotExist:
         return Response({"error": "Employee not found"}, status=404)
 
+#create new api using get
+
+@api_view(['GET'])
+def get_by_email(request):
+    email = request.GET.get('email')
+    try:
+        employee = Employee.objects.get(email=email)
+        serializer = EmployeeSerializer(employee)
+        return Response(serializer.data)
+    except Employee.DoesNotExist:
+        return Response({"error": "Employee not found"}, status=404)

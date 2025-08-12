@@ -1,0 +1,76 @@
+# --- General ---
+# Secret files
+.env
+*.pem
+*.key
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE and editor configuration files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+
+# --- Python ---
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+wheelhouse/
+pip-wheel-metadata/
+
+
+# --- Django Core ---
+# Local database file
+db.sqlite3
+db.sqlite3-journal
+
+# Log files
+*.log
+logs/
+
+# User-uploaded files (media)
+# The source 'media' folder in your app should NOT be ignored if it contains default files,
+# but the folder where user files are uploaded (defined by MEDIA_ROOT) SHOULD be.
+# Adjust 'media_root' to your MEDIA_ROOT setting if it's different.
+media_root/
+
+# Collected static files (static root)
+# The source static files in your apps should be tracked,
+# but the folder where 'collectstatic' dumps files should be ignored.
+# Adjust 'staticfiles' to your STATIC_ROOT setting if it's different.
+staticfiles/
+static_root/
+
+
+# --- Testing & Tools ---
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+
+# Pytest cache
+.pytest_cache
+
+# MyPy cache
+.mypy_cache/
+
+# Tox virtual environments
+.tox/
