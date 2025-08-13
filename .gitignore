@@ -1,0 +1,14 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+/media
+/staticfiles
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Mac OS files
+.DS_Store
